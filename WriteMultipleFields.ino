@@ -1,32 +1,7 @@
 
-
-/*
-  WriteMultipleFields
-  
-  Description: Writes values to fields 1,2,3,4 and status in a single ThingSpeak update every 20 seconds.
-  
-  Hardware: Arduino MKR1000
-  
-  !!! IMPORTANT - Modify the secrets.h file for this project with your network connection and ThingSpeak channel details. !!!
-  
-  Note:
-  - Requires WiFi101 library version 0.15.3 or newer.
-  - This example is written for a network using WPA encryption. For WEP or WPA, change the WiFi.begin() call accordingly.
-  
-  ThingSpeak ( https://www.thingspeak.com ) is an analytic IoT platform service that allows you to aggregate, visualize, and 
-  analyze live data streams in the cloud. Visit https://www.thingspeak.com to sign up for a free account and create a channel.  
-  
-  Documentation for the ThingSpeak Communication Library for Arduino is in the README.md folder where the library was installed.
-  See https://www.mathworks.com/help/thingspeak/index.html for the full ThingSpeak documentation.
-  
-  For licensing information, see the accompanying license file.
-  
-  Copyright 2020, The MathWorks, Inc.
-*/
-
 #include <WiFiNINA.h>
 #include "secrets.h"
-#include "ThingSpeak.h" // always include thingspeak header file after other header files and custom macros
+#include "ThingSpeak.h" 
 #include <DHT11.h>
 
 DHT11 dht11(2);
@@ -46,8 +21,7 @@ int number4 = random(0,100);
 String myStatus = "";
 
 void setup() {
-  //Serial.begin(115200);  
-  Serial.begin(9600);    // Initialize serial 
+  Serial.begin(9600);   
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo native USB port only
   }
@@ -69,7 +43,7 @@ void loop() {
     Serial.println("\nConnected.");
   }
 
-//program code??
+//program code
  int temperature = 0;
     int humidity = 0;
 
