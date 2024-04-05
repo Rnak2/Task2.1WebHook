@@ -122,10 +122,10 @@ void loop() {
   
   // change the values
   number1++;
-  if(number1 > 99){
+  if(temperature > 99){
     number1 = 0;
   }
-  number2 = random(0,100);
+  humidity = random(0,100);
   number3 = random(0,100);
   number4 = random(0,100);
   
